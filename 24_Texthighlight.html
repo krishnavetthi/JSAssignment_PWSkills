@@ -1,0 +1,30 @@
+<!-- Using the Document Object Model (DOM), highlight all words in a paragraph element that are greater than 8 characters. The highlighted words should be with a yellow background color. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto nihil at inventore consequatur numquam maxime laboriosam harum magni iure assumenda fuga eius accusantium porro vero sapiente minus provident nobis earum magnam, doloribus quis natus in. Velit quaerat porro neque aspernatur vitae omnis in eos vel quas dignissimos? Totam, doloremque qui! Asperiores blanditiis id ipsum dolorem quibusdam ab ratione, unde sint quod laudantium explicabo voluptates error sit aliquam, doloribus magni cumque ut voluptatibus animi commodi? Ipsam molestiae aut saepe in sunt odio incidunt velit tempore delectus sapiente. Obcaecati molestiae saepe consequatur distinctio harum deserunt tempora delectus aliquid magni modi est, aliquam perferendis nihil! Corporis hic cupiditate ex. Assumenda veritatis optio rem blanditiis consectetur! Tempora iure possimus, quaerat ipsa vel qui accusantium quas odio architecto reprehenderit distinctio provident, aspernatur nobis, debitis ea maiores! Eaque molestiae iusto corporis voluptates quae consectetur saepe magni nostrum natus vitae aperiam alias porro, culpa voluptatem deserunt similique sequi dolores possimus commodi magnam deleniti ipsum ex laboriosam quas? Molestiae inventore iste consequuntur ipsam, quam, nobis soluta qui expedita adipisci corporis neque! Illo repellendus dolorum obcaecati cum ullam et a voluptates quae saepe aut harum veritatis ab amet ipsa impedit voluptatum delectus, fuga, doloribus nostrum labore cupiditate modi at?</p>
+    <style>
+    .highlight {
+        background-color: yellow;
+    }
+    
+    </style>
+
+    <script>
+        var para = document.querySelector("p");
+        var array = para.innerHTML.split(' ');
+
+        var new_array = array.map(item=> item.length>8?
+            "<span class='highlight'>" + item + "</span>" : item );
+        const final_words = new_array.join(' ');
+        para.innerHTML = final_words;
+
+    </script>
+</body>
+</html>
